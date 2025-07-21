@@ -11,7 +11,7 @@ import org.junit.runner.RunWith;
         plugin = {"json:target/destination/cucumber.json", "rerun:target/destination/failedrerun.txt",
                 "html:target/destination/cucumber.html", "timeline:target/test-results/timeline"},
         snippets = CucumberOptions.SnippetType.CAMELCASE,
-        tags = "@IncioSesionExitoso"
+        tags = "@RunAll"
 )
 public class CucumberTestSuite {
 }

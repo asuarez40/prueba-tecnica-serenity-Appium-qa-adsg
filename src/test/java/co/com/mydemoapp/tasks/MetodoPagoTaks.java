@@ -2,6 +2,7 @@ package co.com.mydemoapp.tasks;
 
 import co.com.mydemoapp.interactions.Espera;
 import co.com.mydemoapp.questions.TargetQuestion;
+import co.com.mydemoapp.utils.ScrollToText;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
@@ -26,7 +27,8 @@ public class MetodoPagoTaks implements Task {
         );
         actor.attemptsTo(
                 SendKeys.of("ANDRES DAVID SUAREZ GOMEZ").into(NOMBRE_CC_FIELD),
-                SendKeys.of("325812657568788").into(NUMERO_TARJETA_FIELD)
+                SendKeys.of("325812657568788").into(NUMERO_TARJETA_FIELD),
+                ScrollToText.containing("Security Code*")
         );
         Espera.cargador(5);
         actor.attemptsTo(

@@ -2,6 +2,7 @@ package co.com.mydemoapp.tasks;
 
 import co.com.mydemoapp.interactions.Espera;
 import co.com.mydemoapp.questions.TargetQuestion;
+import co.com.mydemoapp.utils.ScrollToText;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
@@ -20,7 +21,10 @@ public class SeleccionProductoTasks implements Task {
                 Click.on(BTN_ARTICULO)
         );
         Espera.cargador(5);
-        /** actor.attemptsTo(Scroll.to(TITULO_PRODUCTO).andAlignToTop());*/
+        actor.attemptsTo(
+                ScrollToText.containing("Add To Cart")
+        );
+        Espera.cargador(5);
         actor.should(
                 seeThat(TargetQuestion.title(BTN_AGREGAR_ARTICULO), Matchers.containsString(TEXTO_BTN_AGREGAR))
         );

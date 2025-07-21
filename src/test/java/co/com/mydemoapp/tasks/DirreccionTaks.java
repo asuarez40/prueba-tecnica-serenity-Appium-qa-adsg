@@ -2,6 +2,7 @@ package co.com.mydemoapp.tasks;
 
 import co.com.mydemoapp.interactions.Espera;
 import co.com.mydemoapp.questions.TargetQuestion;
+import co.com.mydemoapp.utils.ScrollToText;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
@@ -35,7 +36,8 @@ public class DirreccionTaks implements Task {
         actor.attemptsTo(
                 SendKeys.of("ANDRES DAVID SUAREZ GOMEZ").into(NOMBRE_FIELD),
                 SendKeys.of("CALLE 123 # 5 - 6").into(DIRECCION1_FIELD),
-                SendKeys.of("TORRE 01 APTO 400").into(DIRECCION2_FIELD)
+                SendKeys.of("TORRE 01 APTO 400").into(DIRECCION2_FIELD),
+                ScrollToText.containing("Country*")
         );
         Espera.cargador(5);
         actor.attemptsTo(
