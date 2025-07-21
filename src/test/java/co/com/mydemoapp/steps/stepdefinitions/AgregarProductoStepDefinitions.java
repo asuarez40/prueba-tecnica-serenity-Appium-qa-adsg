@@ -1,5 +1,6 @@
 package co.com.mydemoapp.steps.stepdefinitions;
 
+import co.com.mydemoapp.interactions.Espera;
 import co.com.mydemoapp.tasks.SeleccionProductoTasks;
 import co.com.mydemoapp.tasks.ValidacionCarritoTasks;
 import io.cucumber.java.en.Given;
@@ -21,18 +22,19 @@ public class AgregarProductoStepDefinitions {
     }
 
     @When("Seleccione un producto a comprar")
-    public static void seleccioneUnProductoAComprar() throws InterruptedException {
+    public static void seleccioneUnProductoAComprar() {
         theActorInTheSpotlight().attemptsTo(
                 SeleccionProductoTasks.seleccionProductoTasks()
         );
-        Thread.sleep(5000);
+        Espera.cargador(5);
     }
 
     @Then("se debe visualizar el articulo en el carrito de forma exitosa")
-    public static void seDebeVisualizarElArticuloEnElCarritoDeFormaExitosa() throws InterruptedException {
+    public static void seDebeVisualizarElArticuloEnElCarritoDeFormaExitosa() {
         theActorInTheSpotlight().attemptsTo(
                 ValidacionCarritoTasks.validacionCarritoTasks()
         );
-        Thread.sleep(5000);
+        Espera.cargador(5);
+
     }
 }

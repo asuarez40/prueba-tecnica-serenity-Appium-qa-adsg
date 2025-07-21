@@ -1,5 +1,6 @@
 package co.com.mydemoapp.tasks;
 
+import co.com.mydemoapp.interactions.Espera;
 import co.com.mydemoapp.questions.TargetQuestion;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
@@ -36,13 +37,7 @@ public class DirreccionTaks implements Task {
                 SendKeys.of("CALLE 123 # 5 - 6").into(DIRECCION1_FIELD),
                 SendKeys.of("TORRE 01 APTO 400").into(DIRECCION2_FIELD)
         );
-
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-
+        Espera.cargador(5);
         actor.attemptsTo(
                 SendKeys.of("BOGOTA").into(CIUDAD_FIELD),
                 SendKeys.of("BOGOTA").into(REGION_FIELD),

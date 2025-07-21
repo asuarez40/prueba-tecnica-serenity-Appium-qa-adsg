@@ -1,5 +1,6 @@
 package co.com.mydemoapp.tasks;
 
+import co.com.mydemoapp.interactions.Espera;
 import co.com.mydemoapp.questions.TargetQuestion;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
@@ -18,12 +19,8 @@ public class SeleccionProductoTasks implements Task {
         actor.attemptsTo(
                 Click.on(BTN_ARTICULO)
         );
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-       /** actor.attemptsTo(Scroll.to(TITULO_PRODUCTO).andAlignToTop());*/
+        Espera.cargador(5);
+        /** actor.attemptsTo(Scroll.to(TITULO_PRODUCTO).andAlignToTop());*/
         actor.should(
                 seeThat(TargetQuestion.title(BTN_AGREGAR_ARTICULO), Matchers.containsString(TEXTO_BTN_AGREGAR))
         );
@@ -32,7 +29,8 @@ public class SeleccionProductoTasks implements Task {
         );
 
     }
-    public static SeleccionProductoTasks seleccionProductoTasks()  {
+
+    public static SeleccionProductoTasks seleccionProductoTasks() {
 
         return new SeleccionProductoTasks();
     }

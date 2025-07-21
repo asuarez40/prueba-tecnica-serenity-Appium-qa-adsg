@@ -1,5 +1,6 @@
 package co.com.mydemoapp.steps.stepdefinitions;
 
+import co.com.mydemoapp.interactions.Espera;
 import co.com.mydemoapp.tasks.ConfirmacionCompraTaks;
 import co.com.mydemoapp.tasks.DirreccionTaks;
 import co.com.mydemoapp.tasks.MetodoPagoTaks;
@@ -14,33 +15,33 @@ import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 public class FlujoCompletoCompraStepDefinitions {
 
     @Given("ya tiene seleccionado un articulo a comprar")
-    public void yaTieneSeleccionadoUnArticuloAComprar() throws InterruptedException {
+    public void yaTieneSeleccionadoUnArticuloAComprar() {
         AgregarProductoStepDefinitions.seleccioneUnProductoAComprar();
         AgregarProductoStepDefinitions.seDebeVisualizarElArticuloEnElCarritoDeFormaExitosa();
     }
 
     @When("diligencie la informacion de envio, metodo de pago")
-    public void diligencieLaInformacionDeEnvioMetodoDePago() throws InterruptedException {
+    public void diligencieLaInformacionDeEnvioMetodoDePago() {
         theActorInTheSpotlight().attemptsTo(
                 DirreccionTaks.dirreccionTaks(),
                 MetodoPagoTaks.metodoPagoTaks()
         );
-        Thread.sleep(5000);
+        Espera.cargador(5);
     }
 
     @And("procese la compra")
-    public void proceseLaCompra() throws InterruptedException {
+    public void proceseLaCompra() {
         theActorInTheSpotlight().attemptsTo(
                 VerificacionTasks.verificacionTasks()
         );
-        Thread.sleep(5000);
+        Espera.cargador(5);
     }
 
     @Then("se debe visualizar la confirmación del pedido exitoso")
-    public void seDebeVisualizarLaConfirmacionDelPedidoExitoso() throws InterruptedException {
+    public void seDebeVisualizarLaConfirmacionDelPedidoExitoso() {
         theActorInTheSpotlight().attemptsTo(
                 ConfirmacionCompraTaks.confirmacionCompraTaks()
         );
-        Thread.sleep(5000);
+        Espera.cargador(5);
     }
 }
