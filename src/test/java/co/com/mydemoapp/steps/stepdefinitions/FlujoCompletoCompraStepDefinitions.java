@@ -18,6 +18,7 @@ public class FlujoCompletoCompraStepDefinitions {
         AgregarProductoStepDefinitions.seleccioneUnProductoAComprar();
         AgregarProductoStepDefinitions.seDebeVisualizarElArticuloEnElCarritoDeFormaExitosa();
     }
+
     @When("diligencie la informacion de envio, metodo de pago")
     public void diligencieLaInformacionDeEnvioMetodoDePago() throws InterruptedException {
         theActorInTheSpotlight().attemptsTo(
@@ -26,6 +27,7 @@ public class FlujoCompletoCompraStepDefinitions {
         );
         Thread.sleep(5000);
     }
+
     @And("procese la compra")
     public void proceseLaCompra() throws InterruptedException {
         theActorInTheSpotlight().attemptsTo(
@@ -33,6 +35,7 @@ public class FlujoCompletoCompraStepDefinitions {
         );
         Thread.sleep(5000);
     }
+
     @Then("se debe visualizar la confirmación del pedido exitoso")
     public void seDebeVisualizarLaConfirmacionDelPedidoExitoso() throws InterruptedException {
         theActorInTheSpotlight().attemptsTo(

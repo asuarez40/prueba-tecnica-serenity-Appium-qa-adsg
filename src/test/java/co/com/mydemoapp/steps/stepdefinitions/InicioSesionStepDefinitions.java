@@ -6,21 +6,16 @@ import co.com.mydemoapp.tasks.NavegacionTasks;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import net.serenitybdd.screenplay.actors.OnStage;
 import org.hamcrest.Matchers;
 
 import static co.com.mydemoapp.ui.LoginPageUi.*;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
-import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 public class InicioSesionStepDefinitions {
 
     @Given("el usuario se encuentra en la pantalla de inicio de sesion")
     public static void elUsuarioSeEncuentraEnLaPantallaDeInicioDeSesion() throws InterruptedException {
-//        OnStage.withCurrentActor(
-//                NavegacionTasks.navegar());
-//        Thread.sleep(5000);
         theActorInTheSpotlight().attemptsTo(
                 NavegacionTasks.navegar()
         );
@@ -30,9 +25,6 @@ public class InicioSesionStepDefinitions {
 
     @When("el usuario ingresa su usuario {string} , contrasena {string} e intente logesarse")
     public static void elUsuarioIngresaSuUsuarioContrasenaYIntenteLogesarse(String usuario, String contrasena) throws InterruptedException {
-//        OnStage.withCurrentActor(
-//                LoginTasks.login(usuario,contrasena));
-//        Thread.sleep(5000);
         theActorInTheSpotlight().attemptsTo(
                 LoginTasks.login(usuario, contrasena)
         );

@@ -18,6 +18,7 @@ public class ConfirmacionCompraTaks implements Task {
         );
     }
 
-    public static ConfirmacionCompraTaks confirmacionCompraTaks(){
-        return new ConfirmacionCompraTaks();}
+    public static ConfirmacionCompraTaks confirmacionCompraTaks() {
+        return new ConfirmacionCompraTaks();
+    }
 }

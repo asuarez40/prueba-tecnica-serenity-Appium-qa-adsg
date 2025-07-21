@@ -24,6 +24,8 @@ public class VerificacionTasks implements Task {
         );
 
     }
-    public static VerificacionTasks verificacionTasks(){
-        return new VerificacionTasks();}
+
+    public static VerificacionTasks verificacionTasks() {
+        return new VerificacionTasks();
+    }
 }

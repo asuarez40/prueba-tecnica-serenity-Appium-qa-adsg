@@ -52,6 +52,8 @@ public class DirreccionTaks implements Task {
         );
 
     }
+
     public static DirreccionTaks dirreccionTaks() {
-        return new DirreccionTaks();}
+        return new DirreccionTaks();
+    }
 }

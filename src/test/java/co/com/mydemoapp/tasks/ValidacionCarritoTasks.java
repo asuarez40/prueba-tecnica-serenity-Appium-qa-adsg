@@ -24,6 +24,8 @@ public class ValidacionCarritoTasks implements Task {
         );
 
     }
-    public static ValidacionCarritoTasks validacionCarritoTasks()  {
-        return new ValidacionCarritoTasks();}
+
+    public static ValidacionCarritoTasks validacionCarritoTasks() {
+        return new ValidacionCarritoTasks();
+    }
 }

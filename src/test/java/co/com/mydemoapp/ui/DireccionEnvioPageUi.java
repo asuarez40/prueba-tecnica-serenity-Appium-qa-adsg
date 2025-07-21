@@ -25,6 +25,4 @@ public class DireccionEnvioPageUi {
     public static final Target BTN_PAGAR = Target.the(("boton continuar con el pago"))
             .locatedBy("//android.widget.TextView[@text='To Payment']");
 
-
-
 }

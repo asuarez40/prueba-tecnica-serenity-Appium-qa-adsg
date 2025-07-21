@@ -15,10 +15,11 @@ public class AgregarProductoStepDefinitions {
     @Given("el usuario se encuentra autenticado")
     public void elUsuarioSeEncuentraAutenticado() throws InterruptedException {
         InicioSesionStepDefinitions.elUsuarioSeEncuentraEnLaPantallaDeInicioDeSesion();
-        InicioSesionStepDefinitions.elUsuarioIngresaSuUsuarioContrasenaYIntenteLogesarse(USUARIO,CONTRASENA);
+        InicioSesionStepDefinitions.elUsuarioIngresaSuUsuarioContrasenaYIntenteLogesarse(USUARIO, CONTRASENA);
         InicioSesionStepDefinitions.laAppDebeConfirmarleElInicioDeSesionExitoso();
 
     }
+
     @When("Seleccione un producto a comprar")
     public static void seleccioneUnProductoAComprar() throws InterruptedException {
         theActorInTheSpotlight().attemptsTo(

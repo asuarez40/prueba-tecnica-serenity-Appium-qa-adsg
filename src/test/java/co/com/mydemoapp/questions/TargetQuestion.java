@@ -5,7 +5,7 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.targets.Target;
 
-public class TargetQuestion implements Question<String>{
+public class TargetQuestion implements Question<String> {
     private final Target text;
 
     public TargetQuestion(Target text) {

@@ -1,6 +1,5 @@
 package co.com.mydemoapp.utils;
 
-
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.PerformsTouchActions;
 import io.appium.java_client.TouchAction;
@@ -9,7 +8,6 @@ import io.appium.java_client.touch.offset.PointOption;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
-import org.openqa.selenium.WebDriver;
 
 import java.time.Duration;
 

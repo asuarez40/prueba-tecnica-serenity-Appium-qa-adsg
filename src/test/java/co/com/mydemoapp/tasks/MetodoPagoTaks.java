@@ -39,6 +39,8 @@ public class MetodoPagoTaks implements Task {
                 Click.on(BTN_VERIFICAR_ORDEN)
         );
     }
+
     public static MetodoPagoTaks metodoPagoTaks() {
-        return new MetodoPagoTaks();}
+        return new MetodoPagoTaks();
+    }
 }

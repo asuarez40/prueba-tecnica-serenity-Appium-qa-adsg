@@ -17,7 +17,6 @@ public class LoginTasks implements Task {
         this.contrasena = contrasena;
     }
 
-
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
